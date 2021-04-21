@@ -1,0 +1,17 @@
+# conf file must be in same directory as script
+
+[json]
+app_name = Brivo Event Logs
+version = 1.0
+
+[brivo]
+auth_url = https://auth.brivo.com
+api_url = https://api.brivo.com
+state_dir = ./state
+pid_file = ./brivo.pid
+username =
+password =
+api_key =
+client_id =
+client_secret =
+
