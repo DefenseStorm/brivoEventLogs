@@ -132,7 +132,7 @@ class integration(object):
         self.last_run = self.ds.get_state(self.state_dir)
         self.client_id = self.ds.config_get('brivo', 'client_id')
         self.client_secret = self.ds.config_get('brivo', 'client_secret')
-        current_time = datetime.now()
+        current_time = datetime.utcnow()
         if self.last_run == None:
             self.last_run = (current_time - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
         self.current_run = current_time.strftime("%Y-%m-%dT%H:%M:%SZ")
