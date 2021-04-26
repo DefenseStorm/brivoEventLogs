@@ -135,7 +135,7 @@ class integration(object):
         current_time = datetime.now()
         if self.last_run == None:
             self.last_run = (current_time - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
-        self.current_run = current_time.isoformat()
+        self.current_run = current_time.strftime("%Y-%m-%dT%H:%M:%SZ")
 
         self.username = self.ds.config_get('brivo', 'username')
         self.password = self.ds.config_get('brivo', 'password')
