@@ -9,7 +9,6 @@ import requests
 import time
 from datetime import datetime
 from datetime import timedelta
-import pytz
 import base64
 
 from six import PY2
