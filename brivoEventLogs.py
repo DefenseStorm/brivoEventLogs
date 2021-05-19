@@ -162,6 +162,8 @@ class integration(object):
             for log in audit_events:
                 log['category'] = 'audit-events'
                 log['message'] = log['securityAction']['action'] + ' - ' + log['actor']['name']
+                log['action'] = log['securityAction']['action']
+                log['username'] = log['actor']['name']
                 self.ds.writeJSONEvent(log, JSON_field_mappings = self.audit_JSON_field_mappings, flatten = False)
 
         if access_events == None:
