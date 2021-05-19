@@ -162,9 +162,6 @@ class integration(object):
             for log in audit_events:
                 log['category'] = 'audit-events'
                 log['message'] = log['securityAction']['action'] + ' - ' + log['actor']['name']
-                log['action'] = log['securityAction']['action']
-                log['username'] = log['actor']['name']
-                log['location'] = log['site']['sitename']
                 self.ds.writeJSONEvent(log, JSON_field_mappings = self.audit_JSON_field_mappings, flatten = False)
 
         if access_events == None:
@@ -179,7 +176,7 @@ class integration(object):
                 log['message'] = message
                 log['action'] = log['securityAction']['action']
                 log['username'] = log['actor']['name']
-                log['location'] = log['site']['sitename']
+                log['location'] = log['site']['siteName']
                 self.ds.writeJSONEvent(log, JSON_field_mappings = self.access_JSON_field_mappings)
 
 
