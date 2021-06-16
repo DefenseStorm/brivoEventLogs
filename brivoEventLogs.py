@@ -176,9 +176,9 @@ class integration(object):
                 message = log['securityAction']['action'] + ' - ' + log['eventObject']['name']
                 if 'actor' in log.keys() and 'name' in log['actor'].keys():
                     message += ' - ' + log['actor']['name']
+                    log['username'] = log['actor']['name']
                 log['message'] = message
                 log['action'] = log['securityAction']['action']
-                log['username'] = log['actor']['name']
                 log['location'] = log['site']['siteName']
                 self.ds.writeJSONEvent(log, JSON_field_mappings = self.access_JSON_field_mappings)
 
